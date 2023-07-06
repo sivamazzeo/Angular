@@ -1,0 +1,26 @@
+<h2>Example of built-in angular pipes</h2>
+<p><strong>UpperCasePipe!!</strong></p>
+<p>Name : <b>{{name | uppercase}}</b></p>
+<strong>Lowercase pipe!!</strong>
+<p>The current user is <b>{{name | lowercase}}</b></p>
+<strong>Date pipe!!</strong>
+<p><b>Today's date is {{todayDate | date:"dd/MM/YYYY"}}</b></p>
+<!-- chaining the pipes -->
+<p>Example of chained pipes -> <b>{{todayDate | date:'fullDate' | uppercase}}</b></p>
+<strong>Example of currency pipe..</strong>
+<p>Value in INR is <b>{{money | currency:'INR'}}</b></p>
+<p>Value in dollars is <b>{{money | currency:'USD'}}</b></p>
+<strong>Example of percent pipe..</strong>
+<p>{{mark | percent}}</p>
+<strong>Example of Decimal pipe..</strong>
+<!-- before the point is a atleast constraint and after the point is the fixed constraint -->
+<p>{{decimalNum | number : '2.3'}}</p> 
+<!-- 1st index will be included and last index will be excluded -->
+<strong>Example of Slice pipe..</strong>
+<p>{{fruits | slice : 1:4}}</p>
+<strong>Example of customised pipe</strong><br>
+<label>Employee Name : </label>&nbsp;<input type="text" placeholder="Enter the text" [(ngModel)]="searchTxt"><br>
+<strong>Available Employee List</strong>
+<ul *ngFor="let emp of employeeList | filter : searchTxt">
+    <li>{{emp}}</li>
+</ul>

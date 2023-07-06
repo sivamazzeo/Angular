@@ -1,0 +1,15 @@
+<div class="row col-lg-12">
+    <div class="col-lg-3">
+        <div class="sidenav">
+            <a routerLink="productlist" routerLinkActive="active">Product List</a>
+            <a routerLink="operatormaster" routerLinkActive="active">Product Master</a>
+            <a routerLink="" routerLinkActive="active">Exit</a>
+        </div>
+    </div>
+    <div class="col-lg-9">
+        <app-header (message)="receiveData($event)" [userName]="currentUser"></app-header>
+        <div *ngIf="childMsg != ''"><p>The message from your child is {{this.childMsg}}</p></div>
+        <!-- to create a placeholder or container to load the child components -->
+        <router-outlet></router-outlet>
+    </div>
+</div>

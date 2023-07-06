@@ -1,0 +1,38 @@
+<p>About Directives...Attribute directives are nothing but property name given inside [] under property data binding</p>
+<div appHighlight>
+    <h3>Example of iterating an array in html usingn *ngFor...</h3>
+    <ul *ngFor="let name of friendList; let ind = index;">
+        <strong>{{ind}}</strong><li>{{name}}</li>
+        <!-- ngIf will be used to hide/show the content based on condition -->
+        <div *ngIf="name == 'Syed'">
+            <p>Hurrah!! you have married your friend</p>
+        </div>
+    </ul>
+</div>
+<div>
+    <h3>Example of iterating an json object in html using *ngFor...</h3>
+    <div *ngFor="let obj of jsonObj; let i = index;">
+        <label>Friend Name_{{i}} : </label>&nbsp;<label>{{obj.name}}</label><br>
+        <label>FrienBy_{{i}} : </label>&nbsp;<label>{{obj.friendMate}}</label>
+    </div>
+</div>
+<div>
+    <h3>Iterating an single object in html is not possible using *ngFor becoz it is not requitred</h3>
+    <div>
+        <label>Friend Name : </label>&nbsp;<label>{{singleObj.name}}</label><br>
+        <label>FrienBy : </label>&nbsp;<label>{{singleObj.friendMate}}</label>
+    </div>
+</div>
+
+<h2>Example of ngswitchcase</h2>
+<input type="number" [(ngModel)]="userNum" appHighlight [value]="userNum">
+<div [ngSwitch]="userNum">
+    <div *ngSwitchCase='1'>One is displayed</div>
+    <div *ngSwitchCase='2'>Two is displayed</div>
+    <div *ngSwitchCase='3'>Three is displayed</div>
+    <div *ngSwitchDefault>If the case is not matched, then it goes here default Option</div>
+</div>
+
+<div *ngIf="userNum > 10">
+    <p>The number given by the user is greater than the limit</p>
+</div>

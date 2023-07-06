@@ -1,0 +1,19 @@
+
+    [{
+        "position":1,
+        "name":"Ring",
+        "weight":1.100,
+        "symbol":"W"
+    },{
+        "position":2,
+        "name":"Dia.Chain",
+        "weight":1.000,
+        "symbol":"C"
+    },{
+        "position":3,
+        "name":"Bracelet",
+        "weight":1.0079,
+        "symbol":"G"
+    }
+]
+

@@ -1,0 +1,24 @@
+<div class="container-fluid bg-secondary">
+  <div class="row col-xl-12" style="padding-top : 2%">
+    <div class="col-xl-6">
+      <strong>UserName :</strong>&nbsp;<input type="text" placeholder="Enter your name" class="form-control"
+        [(ngModel)]="username" [style.color]="styleprop" [ngClass]="validated ? 'css2' : 'css1'"><br>
+      <strong>Password : </strong>&nbsp;<input type="password" placeholder="Enter your pwd" class="form-control"
+        [(ngModel)]="pwd" [style.color]="styleprop" [ngClass]="validated ? 'css2' : 'css1'"><br>
+      <div class="dropdown">
+        <button [disabled]="!username || !pwd" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">{{currentRole | uppercase}}
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" *ngFor="let role of roles" (click)="currentRole = role">{{role | uppercase}}</a>
+        </div>
+      </div><br>
+      <button type="button" class="btn btn-primary" (click)="validate()">Login</button><br>
+      <button type="button" class="btn btn-secondary" style="background-color: red;" routerLink="admin/lazy">Go to New User</button>
+      <button type="button" class="btn btn-primary" style="background-color: red;" (click)="validate_report()">Report</button><br>
+    </div>
+    <div class="col-xl-6">
+      <img style="float : left" src="/assets/login.jpg" width="400" height="350" class="rounded" alt="loading..">
+    </div>
+  </div>
+</div>
